@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# MCP cache
+.perchance-mcp/
+*.log
+
+# Output images
+perchance-output/
+*.jpeg
+*.jpg
+*.png
+*.webp
+!perchance-output/.gitkeep
+
+# Playwright / Browsers
+.ms-playwright/
+.camoufox/
+downloaded_files/
+
+# Deps
+/tmp/debs/
+.perchance-deps/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "perchance-stable-diffusion": {
+      "command": "python",
+      "args": ["/home/user/perchance-mcp/server.py"],
+      "env": {
+        "LD_LIBRARY_PATH": "/tmp/debs/out/usr/lib/x86_64-linux-gnu",
+        "PERCHANCE_USER_KEY": ""
+      }
+    }
+  }
+}

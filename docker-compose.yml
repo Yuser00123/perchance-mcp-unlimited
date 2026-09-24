@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  perchance-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+      - PORT=8000
+      - HOST=0.0.0.0
+      # Optional: cache a fresh userKey to avoid Turnstile solving every time
+      # - PERCHANCE_USER_KEY=your_64_char_key_here
+    volumes:
+      - ./perchance-output:/app/perchance-output
+      - ./perchance-output:/home/user/perchance-output
+    restart: unless-stopped
+    # For SeleniumBase UC Mode, need more memory
+    mem_limit: 2g
+
+  # Optional: FlareSolverr for extra Cloudflare bypass (if you want)
+  # flaresolverr:
+  #   image: ghcr.io/flaresolverr/flaresolverr:latest
+  #   ports:
+  #     - "8191:8191"
+  #   environment:
+  #     - LOG_LEVEL=info
